@@ -15,6 +15,9 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 const int KOALA_WIDTH = 16;
 const int KOALA_HEIGHT = 23;
 
+const int NUMBER_1_WIDTH = 4;
+const int NUMBER_1_HEIGHT = 7;
+
 // Movement variables
 int posX = 0;      // Current X position
 int posY = 0;      // Current Y position
@@ -34,7 +37,7 @@ void setup() {
 
 void koala_motion(){
   // 2. Draw the koala at the current position
-  display.drawBitmap(posX, posY, koala, KOALA_WIDTH, KOALA_HEIGHT, WHITE);
+  display.drawBitmap(posX, posY, epd_bitmap_Number_1, NUMBER_1_WIDTH, NUMBER_1_HEIGHT, WHITE);
 
   // 3. Show the frame
   display.display(); 
@@ -55,6 +58,7 @@ void koala_motion(){
   // Small delay to control the speed of animation
   delay(10); 
 }
+
 
 void loop() {
   
